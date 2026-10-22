@@ -2,7 +2,7 @@
 
 Scrappy is a small desk companion. It can **hear** you, **talk** back, **see** through a camera, show a **face** on a tiny screen, **turn its head**, and it knows when you **pat** it. It's built only from parts that were already in my junk drawer, on breadboards and jumper wires, with nothing new bought.
 
-📺 **Watch the build:** *(video link coming soon)*
+**Watch the build:** *(video link coming soon)*
 
 ![Scrappy wiring diagram](assets/wiring_diagram.png)
 
@@ -187,5 +187,5 @@ First, tell me which parts from the photo you'd use for each job, and why.
 
 ## More
 
-- 📺 Main channel: [Tech With Anant](https://www.youtube.com/@techwithanant-yt)
-- 🧠 How the AI behind Scrappy works: [Anant Explains](https://www.youtube.com/@anantexplainstech)
+- Main channel: [Tech With Anant](https://www.youtube.com/@techwithanant-yt)
+- How the AI behind Scrappy works: [Anant Explains](https://www.youtube.com/@anantexplainstech)
