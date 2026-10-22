@@ -6,7 +6,7 @@ Scrappy is a small desk companion. It can **hear** you, **talk** back, **see** t
 
 ![Scrappy wiring diagram](assets/wiring_diagram.png)
 
-> **Code:** coming soon. For now, this repo has the parts list, the wiring and a beginner prompt so you can start building.
+> **What's here:** the parts list, the wiring, a **test program for every module**, an example personality file and a beginner prompt. The full Scrappy firmware and brain are coming later. Star the repo to get notified.
 
 ---
 
@@ -132,6 +132,30 @@ Build and test **one module at a time**. When something stops working, you'll kn
 7. **Eyes:** plug in the camera and take a photo.
 8. **Touch:** the copper pad on top of the head, on GPIO 3.
 9. **Brain on your computer:** speech-to-text → AI model → voice, sent back over Wi-Fi.
+
+---
+
+## Test code (one sketch per module)
+
+Each sketch tests **one** part on its own, so you know it's wired right before you add the next one. They're in `firmware/tests/`.
+
+| Step | Sketch | What you should see |
+|---|---|---|
+| Brain | `pin_check` | Every pin Scrappy uses reads 3.3 V on a multimeter. A pin at 0 V has a bad solder joint |
+| Ears | `mic_test` | A live voice-level bar in the Serial Monitor when you talk or clap |
+| Mouth | `amp_test` | A little rising chirp every 3 seconds |
+| Face | `oled_face` | Two cyan eyes and an orange smile that blink |
+| Neck | `servo_test` | The head slowly looks left and right |
+| Eyes | `cam_snap` | Send `s` and it returns a photo (`tools/grab_photo.ps1 COM3` saves it on Windows) |
+| Touch | `touch_test` | The reading jumps and it prints "pat!" when you touch the copper |
+
+**How to upload (Arduino IDE)**
+1. Install the **esp32** boards package by Espressif (version 3.x) from the Boards Manager. No other libraries are needed.
+2. Board: **ESP32S3 Dev Module**. Flash size: **16MB**. PSRAM: **OPI PSRAM** (the camera needs it).
+3. Plug the USB-C into the board's **UART/COM** port, pick that port, then Upload.
+4. Open the Serial Monitor at **115200** baud.
+
+`examples/personality.md` shows how the robot's character is written: one short text file that the AI model reads before every reply.
 
 ---
 
